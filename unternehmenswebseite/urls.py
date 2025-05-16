@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+def api_root(request):
+    return JsonResponse({"status": "API erreichbar"})
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", include("unternehmenswebseite.api_urls")),
 ]
