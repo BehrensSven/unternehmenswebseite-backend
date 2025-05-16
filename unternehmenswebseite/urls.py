@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import db_status 
 
 def api_root(request):
     return JsonResponse({"status": "API erreichbar"})
@@ -23,4 +24,5 @@ def api_root(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("unternehmenswebseite.api_urls")),
+    path('status/db/', db_status),
 ]
