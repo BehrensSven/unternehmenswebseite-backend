@@ -23,6 +23,6 @@ def api_root(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/", include("unternehmenswebseite.api_urls")),
-    path('status/db/', db_status),
+    #path("api/", include("unternehmenswebseite.api_urls")),
+    path('api/status/db/', db_status)
 ]
